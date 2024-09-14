@@ -2,6 +2,7 @@
 
 import { buildSchema, Model } from '@am92/mongo-odm'
 
+import AES from '../../../helpers/AES.mjs'
 const UserSchemaObject = {
   email: { type: String, index: true, unique: true },
   username: { type: String, unique: true },
@@ -14,5 +15,5 @@ const UserSchemaObject = {
 
 const UserSchema = buildSchema(UserSchemaObject)
 
-const UserModel = new Model('user-details', UserSchema)
-export default UserModel
+const UserDbModel = new Model('user-details', UserSchema)
+export default UserDbModel

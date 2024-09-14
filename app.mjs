@@ -6,6 +6,7 @@ import '@am92/api-logger/polyfillConsole'
 
 import { configureApp } from '@am92/express-utils'
 import ApiSec from '@m92/api-sec'
+import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import express from 'express'
 import helmet from 'helmet'
@@ -24,6 +25,7 @@ app.use(cors(CORS_OPTIONS))
 app.use(express.json({ limit: BODY_LIMIT }))
 app.use(express.urlencoded({ limit: BODY_LIMIT, extended: true }))
 app.use(helmet())
+app.use(cookieParser())
 
 // Initialize Routes
 configureApp(app, Routes)

@@ -1,12 +1,12 @@
 {
-  "name": "periyar",
+  "name": "pg-management",
   "version": "1.0.0",
-  "description": "Digigold BE API",
+  "description": "PG_MANAGEMENT",
   "type": "module",
   "main": "app.mjs",
   "scripts": {
     "start": "node app.mjs",
-    "dev": "NODE_ENV=development nodemon app.mjs",
+    "dev": "nodemon app.mjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . || echo 'Run \"npm run lint:fix\" to automatically fix issues.'",
     "lint:fix": "eslint --fix .",
@@ -18,10 +18,12 @@
     "@am92/mongo-odm": "^2.0.7",
     "@am92/node-http": "^1.1.1",
     "@m92/api-sec": "^1.2.4",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "custom-env": "^2.0.2",
     "express": "^4.19.2",
     "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
     "moment": "^2.30.1"
   },
   "devDependencies": {

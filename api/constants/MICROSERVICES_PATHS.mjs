@@ -1,0 +1,9 @@
+import MICROSERVICES_ENDPOINTS from '../../config/MICROSERVICES_ENDPOINTS.mjs'
+
+const { DUMMY_MS } = MICROSERVICES_ENDPOINTS
+
+export const MICROSERVICES_PATH = {
+  TRANSACTION: {
+    DUMMY: `${DUMMY_MS}/transaction/`
+  }
+}

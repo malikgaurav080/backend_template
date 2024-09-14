@@ -1,0 +1,40 @@
+custom: ${file(./parameters.yml)}
+
+useDotenv: true
+
+service: ${self:custom.service}
+
+plugins: ${self:custom.plugins}
+
+package:
+  excludeDevDependencies: true
+
+frameworkVersion: "3.30.1"
+
+provider:
+  name: aws
+  region: ${self:custom.region}
+  stage: ${self:custom.stage}
+  stackName: ${self:service}-${self:provider.stage}
+  apiName: ${self:service}-${self:provider.stage}
+  memorySize: ${self:custom.memorySize}
+  runtime: nodejs18.x
+  
+  iam:
+    role: ${self:custom.role}
+
+  vpc: ${self:custom.vpc}
+
+  tags: ${self:custom.tags}
+
+functions:
+  index:
+    handler: lambda.handler
+    name: ${self:service}-${self:provider.stage}
+    
+    # Function URL Config
+    url: true
+    
+    # API Gateway Config
+    # events:
+    #   - httpApi: '*'
